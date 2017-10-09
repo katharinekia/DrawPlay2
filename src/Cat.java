@@ -23,6 +23,12 @@ public class Cat {
 	private static final int WHISKER_LENGTH = HEAD_DIMENSION/4;
 	private static final int WHISKER_SLANT = 5;
 	private static final int NUM_WHISKERS = 3;
+	//ears
+	private static final int EAR_Y = HEAD_DIMENSION/4;
+	private static final int EAR_X = HEAD_DIMENSION/9;
+	private static final int EAR_SEPARATION = HEAD_DIMENSION/2;
+	private static final int EAR_HEIGHT = 30;
+	private static final int EAR_WIDTH = 30;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -33,6 +39,12 @@ public class Cat {
 		// Draw the head
 		g2.setColor(Color.black);
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
+		//Draw ears
+		x = (catX + EAR_X); 
+		y = catY - EAR_Y;
+		g2.fillOval(x, y, EAR_WIDTH, EAR_HEIGHT);
+		x += EAR_SEPARATION;
+		g2.fillOval(x, y, EAR_WIDTH, EAR_HEIGHT);
 		// Draw the eyes
 		g2.setColor(Color.green);
 		x = catX + EYE_X; 
